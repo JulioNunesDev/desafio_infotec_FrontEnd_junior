@@ -12,37 +12,15 @@ const styleds = {
     border-radius: 5px;
     cursor: pointer;
     position: relative;
-
-    &:hover .addCart {
-         opacity: 1;
-         z-index: 10;
-        }
-
    
-    .addCart {
-      position: absolute;
-      right: 15px;
-      top: 10px;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      cursor: pointer;
-      opacity: 0;
-      border: none;
-      transition: all .2s ease-in;
-
-      &:hover{
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-    }
   `,
   BoxContent: styled.div`
     width: 100%;
     height: auto;
-
+   
+    a{
+      text-decoration: none;
+    }
     .image {
       width: 100%;
       height: auto;
@@ -68,27 +46,27 @@ const styleds = {
     }
 
     .tittle {
+    
       width: 100%;
       height: auto;
-      padding: 0 7px;
-      h2 {
+      padding: 7px 7px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+     
+      p {
         font-family: var(--font-Poppins);
         font-size: 22px;
         color: #222222;
-      }
-    }
-    .price {
-      width: 100%;
-      height: auto;
-
-      p {
-        font-family: var(--font-Poppins);
-        font-size: 19px;
-        color: var(--color-primary);
         font-weight: 300;
-      }
-    }
-  `,
+
+        &:nth-child(2){
+          color: var(--color-text);
+        }
+    }  }
+`
+    
 };
 
 export default styleds;

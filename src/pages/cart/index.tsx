@@ -1,12 +1,12 @@
-import ProductPage from "../../components/ProductPage/Index";
+import CartPage from "../../components/CartPage";
 // import { ProductProvider } from "../../hooks/Products";
 // import { CartProvider } from "../../hooks/Store";
 
 const Home = () => {
   return (
     
-        <ProductPage />
-    
+        <CartPage />
+  
   );
 };
 

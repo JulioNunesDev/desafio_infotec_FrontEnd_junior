@@ -1,6 +1,12 @@
 import { styled } from "styled-components";
 const styleds = {
   BoxMain: styled.header`
+
+  a{
+  text-decoration: none;
+}
+
+
     width: 100%;
     height: 75px;
     background-color: #fafafa;
@@ -14,6 +20,8 @@ const styleds = {
 
     .logo {
       position: relative;
+
+      
       h2 {
         font-size: 30px;
         color: #000000;

@@ -1,89 +1,100 @@
 import React, {
-  Dispatch,
-  SetStateAction,
   createContext,
-  useState,
   useContext,
+  useState,
+  ReactNode,
   useEffect,
+  SetStateAction,
+  Dispatch,
 } from "react";
 
-type TCart = {
+// Definindo os tipos
+
+
+interface CarItemProps {
+  id: string;
+  quantity: number
+}
+
+interface CartContextType {
+  addToCart: (itemId: string) => void;
+  removeFromCart: (productId: string) => void;
   openCart: boolean;
-  setOpenCart: boolean;
-};
+  setOpenCart: Dispatch<SetStateAction<boolean>>;
+  produtoCarrinho: CarItemProps[];
+  setProdutoCarrinho: Dispatch<SetStateAction<CarItemProps[]>>;
+}
 
-type TProducts = {
-  nome: string;
-  valor: number;
-  quantidade: number;
-};
 
-export type IProps = {
-  AddItem: (item: string) => void;
-  RemoveItem: () => void;
-  openCart: TCart | boolean;
-  setOpenCart: Dispatch<SetStateAction<TCart | boolean>>;
-  contador: React.ReactNode | number;
-  setContador: Dispatch<SetStateAction<number | undefined>>;
-  produtos: TProducts | Array<TProducts>;
-};
+const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export const Store = createContext<IProps>({} as IProps);
+// Provedor do contexto
+interface CartProviderProps {
+  children: ReactNode;
+}
+export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
+  const [openCart, setOpenCart] = useState<boolean>(false);
+  const [produtoCarrinho, setProdutoCarrinho] = useState<CarItemProps[]>([]);
 
-export const StoreProvide = ({ children }: { children: React.ReactNode }) => {
-  const [openCart, setOpenCart] = useState<TCart | boolean>(false);
-  const [contador, setContador] = useState<number | undefined>(0);
-  const [produtos, setProdutos] = useState<TProducts[]>([]);
-
-  const AddItem = (item: string) => {};
-  const RemoveItem = () => {};
 
   useEffect(() => {
     // Simulando um fetch de um JSON (substitua pela sua lógica real)
-    const jsonData = {
-      itens: [
-        {
-          nome: "Coco da Bahia",
-          valor: 3.0,
-          quantidade: 1,
-        },
-        {
-          nome: "Abóbora",
-          valor: 7.5,
-          quantidade: 1,
-        },
-        {
-          nome: "Ovo",
-          valor: 9.5,
-          quantidade: 12,
-        },
-      ],
-    };
-
-    setProdutos(jsonData.itens);
+   
+      const oldCart = localStorage.getItem('cart')
+      setProdutoCarrinho(JSON.parse(oldCart))
+      console.log(produtoCarrinho)
   }, []);
 
+
+  const addToCart = (id: string) => {
+    setProdutoCarrinho((prevItems) => {
+      const updatedItems = prevItems.map((prevItem) =>
+        prevItem.id === id ? { ...prevItem, quantity: prevItem.quantity + 1 } : prevItem
+      );
+  
+      const existingItemIndex = updatedItems.findIndex((item) => item.id === id);
+  
+      if (existingItemIndex === -1) {
+        updatedItems.push({ id, quantity: 1 });
+      }
+  
+      localStorage.setItem('cart', JSON.stringify(updatedItems));
+      return updatedItems;
+    });
+  };
+
+
+  const removeFromCart = (id: string) => {
+    setProdutoCarrinho((prevItems) => {
+      const updatedItems = prevItems.filter((prevItem) => prevItem.id !== id);
+  
+      localStorage.setItem('cart', JSON.stringify(updatedItems));
+      return updatedItems;
+    });
+  };
+  
+
+  const contextValue: CartContextType = {
+    addToCart,
+    removeFromCart,
+    setOpenCart,
+    openCart,
+    produtoCarrinho,
+    setProdutoCarrinho,
+  };
+
   return (
-    <Store.Provider
-      value={{
-        openCart,
-        setOpenCart,
-        AddItem,
-        RemoveItem,
-        contador,
-        setContador,
-        produtos,
-      }}
-    >
-      <>{children}</>
-    </Store.Provider>
+    <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
   );
 };
 
-const UseContextProvider = () => {
-  const context = useContext(Store);
-
+// Hook personalizado para usar o contexto
+const useCartContext = () => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("useCart must be used within a CartProvider");
+  }
   return context;
 };
 
-export default UseContextProvider;
+export default useCartContext;

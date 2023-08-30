@@ -1,30 +1,31 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from '../pages/home';
-import Header from '../components/Header';
-import Product from '../pages/Product/Index';
-    
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "../pages/home";
+import Header from "../components/Header";
+import Product from "../pages/Product/Index";
 
-import S from './styled'
-import Footer from '../components/Footer';
-function AppRoutes(){
-   
-  
+import S from "./styled";
+import Footer from "../components/Footer";
+import PageCart from "../pages/cart";
 
-   
-    return (
-   
-        <BrowserRouter>
+
+function AppRoutes() {
+  return (
+      <BrowserRouter>
         <Header />
         <S.MainBox>
-            <Routes>
-                <Route path='/' element={<Home/>}/>
-                <Route path='/product' element={<Product/>}/>
-            </Routes>
+          <Routes>
+      
+            <Route path="/" element={<Home />} />
+
+            <Route path="/product/:id" element={<Product />} />
+            <Route path="/cart" element={<PageCart />} />
+            <Route path="*" element={<p>Erro</p>} />
+            
+          </Routes>
         </S.MainBox>
-        <Footer/>
-        </BrowserRouter>
-       
-        )
+        <Footer />
+      </BrowserRouter>
+  );
 }
 
 export default AppRoutes;

@@ -1,14 +1,12 @@
-import Card from "../../components/Card";
-import S from "./styled";
+import HomePage from "../../components/HomePage";
+// import { ProductProvider } from "../../hooks/Products";
+
 
 const Home = () => {
   return (
-    <S.MainBox>
-      <h2>Produtos</h2>
-      <div className="BoxProducts">
-        <Card />
-      </div>
-    </S.MainBox>
+ 
+        <HomePage />
+  
   );
 };
 

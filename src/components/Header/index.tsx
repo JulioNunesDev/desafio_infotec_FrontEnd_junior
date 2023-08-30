@@ -2,15 +2,14 @@ import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";
 import { FaCartShopping } from "react-icons/fa6";
 import S from "./styled";
-import CartShopping from "../Cart";
-import UseContextProvider from "../../hooks/Store";
-
 const Header = () => {
-  const {openCart, setOpenCart, contador} = UseContextProvider()
   return (
     <S.BoxMain>
       <div className="logo">
+      <Link to="/">
         <h2>InfoTec</h2>
+      </Link>
+        
       </div>
       <nav>
         <ul>
@@ -23,17 +22,14 @@ const Header = () => {
         </ul>
       </nav>
       <div className="cart">
-        <div className="countCart">
-          <p>{contador}</p>
-          </div>
-        <IconContext.Provider value={{ color: "black", size: "23" }}>
-          <button  onClick={()=>setOpenCart(!openCart)}>
-            <FaCartShopping />
-          </button>
+        <div className="countCart"></div>
+        <IconContext.Provider value={{ color: "black", size: "23", className:'teste'}}>
+          <Link to='/cart'>
+            <button>
+              <FaCartShopping />
+            </button>
+          </Link>
         </IconContext.Provider>
-        {openCart && (
-          <CartShopping />
-          )}
       </div>
     </S.BoxMain>
   );

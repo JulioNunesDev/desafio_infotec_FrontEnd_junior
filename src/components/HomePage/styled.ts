@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const styleds = {
   MainBox: styled.main`
-  position: relative;
+  
     width: 100%;
     height: 100vh;
     display: flex;
@@ -12,10 +12,8 @@ const styleds = {
 
     h2 {
       font-family: var(--font-Poppins);
-      font-size: 30px;
+      font-size: 22px;
       padding-bottom: 15px;
-     
-
     }
 
     .BoxProducts {
