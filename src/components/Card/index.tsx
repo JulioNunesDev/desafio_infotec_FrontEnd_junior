@@ -8,20 +8,22 @@ const Card = ({data}) => {
 
   return (
     <S.MainBox>
+          <Link to={`/product/${data.id}`}>
       <S.BoxContent>
-      <Link to={`/product/${data.id}`}>
         <div className="image">
           <img
             src={data.image}
             alt={data.name}
             />
+               <div className="tittle">
+          <h3>{data.name}</h3>
+          <p>R$ {data.price.toFixed(2)}</p>
         </div>
-        <div className="tittle">
-          <p>{data.name}</p>
-          <p>R$ {data.price}</p>
+        
         </div>
-            </Link>
       </S.BoxContent>
+            </Link>
+     
     </S.MainBox>
   );
 };

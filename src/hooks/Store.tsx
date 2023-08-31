@@ -18,11 +18,13 @@ interface CarItemProps {
 
 interface CartContextType {
   addToCart: (itemId: string) => void;
+  Decrement:(itemId: string) => void;
   removeFromCart: (productId: string) => void;
   openCart: boolean;
   setOpenCart: Dispatch<SetStateAction<boolean>>;
   produtoCarrinho: CarItemProps[];
   setProdutoCarrinho: Dispatch<SetStateAction<CarItemProps[]>>;
+
 }
 
 
@@ -62,7 +64,17 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       return updatedItems;
     });
   };
+  const Decrement = (id: string) => {
+    setProdutoCarrinho((prevItems) => {
+      return prevItems.map((prevItem) =>
+        prevItem.id === id && prevItem.quantity > 1
+          ? { ...prevItem, quantity: prevItem.quantity - 1 }
+          : prevItem
+      );
+    });
+  };
 
+  
 
   const removeFromCart = (id: string) => {
     setProdutoCarrinho((prevItems) => {
@@ -81,6 +93,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     openCart,
     produtoCarrinho,
     setProdutoCarrinho,
+    Decrement
   };
 
   return (

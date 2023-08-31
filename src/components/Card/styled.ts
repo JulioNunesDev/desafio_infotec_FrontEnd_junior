@@ -1,72 +1,82 @@
 import styled from "styled-components";
 const styleds = {
   MainBox: styled.main`
-    background-color: #fff;
-    width: 300px;
-    height: 400px;
+    background-color: #f2f2f2;
+    width: 350px;
+    height: 340px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    -webkit-box-shadow: -1px 7px 23px 5px rgba(0, 0, 0, 0.34);
-    box-shadow: -1px 7px 23px 5px rgba(0, 0, 0, 0.34);
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
-    position: relative;
+    padding: 30px;
+    box-shadow: var(--sombra);
    
-  `,
-  BoxContent: styled.div`
-    width: 100%;
-    height: auto;
-   
-    a{
+    a {
       text-decoration: none;
-    }
-    .image {
-      width: 100%;
-      height: auto;
-      background-position: center;
-
-     
-
-      img {
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        width: 100%;
-        height: 300px;
-        object-fit: contain;
-        object-position: center;
-        transition: all .2s ease-in;
-
-        &:hover {
-          filter: blur(1px);
-         
-        }
-        
-      }
     }
 
     .tittle {
-    
       width: 100%;
-      height: auto;
-      padding: 7px 7px;
+      height:max-content;
       display: flex;
       align-items: center;
-      justify-content: space-between;
       
-     
+      justify-content: space-between;
+      padding: 10px 15px;
+      gap: 10px;
+
+      h3 {
+        font-family: var(--font-Jost);
+        font-size: 25px;
+        color: #222222;
+        font-weight: 600;
+        text-align: center;
+      }
       p {
         font-family: var(--font-Poppins);
-        font-size: 22px;
-        color: #222222;
-        font-weight: 300;
+        font-size: 20px;
+        color: var(--color-primary);
+        font-weight: 400;
+        text-align: right;
+      }
+    }
 
-        &:nth-child(2){
-          color: var(--color-text);
+    .resume {
+      p {
+        font-family: var(--font-Poppins);
+        font-size: 15px;
+        color: #444;
+        font-weight: 400;
+        text-align: right;
+        text-align: left;
+        text-justify: inter-word;
+      }
+    }
+  `,
+  BoxContent: styled.div`
+    width: 100%;
+    height: max-content;
+
+   
+
+    .image {
+      width: 100%;
+      height: auto;
+
+      img {
+        border-radius: 20px ;
+        width: 300px;
+        height: 250px;
+        object-fit: cover;
+
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          filter: blur(1px);
         }
-    }  }
-`
-    
+      }
+    }
+  `,
 };
 
 export default styleds;

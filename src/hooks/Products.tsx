@@ -1,38 +1,48 @@
-import React, {
-  createContext,
-  useContext,
-  ReactNode,
-  useState
-} from "react";
-
+import React, { createContext, useContext, ReactNode, useState } from "react";
 
 const jsonData = [
   {
     id: "1",
     name: "Coco da Bahia",
     image:
-      "https://ecovarzeapb.com/wp-content/uploads/2020/05/1005524_1_1541701676-300x300.jpg",
+      "https://th.bing.com/th/id/OIP.wc_oscfHtgq0WxovHDuCpQHaD4?pid=ImgDet&rs=1",
     price: 3.00,
     resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      `O coco da Bahia
+      Nunca foi baiano
+      Se você quer saber esse
+      Coco é sergipano
+      Lá na Barra dos Coqueiros
+      Tem conquista bom de coco
+      Tira coco bebe coco
+      Come coco e faz cocada
+      Chega morena vamos
+      Coquear um pouco`
   },
   {
     id: "2",
     name: "Abóbora",
     image:
-      "https://th.bing.com/th/id/OIP._5rSlQ9770VvPnuYzP2WnQAAAA?pid=ImgDet&rs=1",
-    price: 7.50,
+      "https://th.bing.com/th/id/R.7016bc89f4a200837e05530a2d6edc41?rik=YiGZqHTEk737Tg&riu=http%3a%2f%2fwww.iguaria.com%2fwp-content%2fuploads%2f2015%2f11%2fVarios-Tipos-de-Abobora.jpg&ehk=bITGi4DPrDUdA0oVnkmCzNvJvxqAZtfClEWLZ%2f8Obgc%3d&risl=&pid=ImgRaw&r=0",
+    price: 7.25,
     resume:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
   },
   {
     id: "3",
-    name: "Ovo (Dúzia)",
+    name: "Ovos",
+    image:
+      "https://th.bing.com/th/id/R.6d1073f112b8937ea639bb3c25182d74?rik=%2f2JGaFIjijqZpQ&pid=ImgRaw&r=0",
+    price: 9.50,
+    resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+  },
+  {
+    id: "4",
+    name: "Ovos Meia-duzia",
     image:
       "https://th.bing.com/th/id/OIP.ofgJfpkRWjBW8o17jjc4aQAAAA?pid=ImgDet&rs=1",
-    price: 9.50,
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+    price: 4.75,
+    resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
   },
 ];
 
@@ -45,10 +55,8 @@ interface ProductItem {
 }
 
 interface ProductListProps {
-  productList: ProductItem[]
-} 
-
-
+  productList: ProductItem[];
+}
 
 const ProductContext = createContext<ProductListProps>(undefined);
 
@@ -56,15 +64,17 @@ const ProductContext = createContext<ProductListProps>(undefined);
 interface ProductProviderProps {
   children: ReactNode;
 }
-export const ProductProvider: React.FC<ProductProviderProps> = ({ children }) => {
+export const ProductProvider: React.FC<ProductProviderProps> = ({
+  children,
+}) => {
   const [productList] = useState<ProductItem[]>(jsonData);
 
-
-
-  const contextValue: ProductListProps = {productList};
+  const contextValue: ProductListProps = { productList };
 
   return (
-    <ProductContext.Provider value={contextValue}>{children}</ProductContext.Provider>
+    <ProductContext.Provider value={contextValue}>
+      {children}
+    </ProductContext.Provider>
   );
 };
 

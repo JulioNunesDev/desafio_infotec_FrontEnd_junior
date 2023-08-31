@@ -1,12 +1,11 @@
 import HomePage from "../../components/HomePage";
-// import { ProductProvider } from "../../hooks/Products";
-
+import { ProductProvider } from "../../hooks/Products";
 
 const Home = () => {
   return (
- 
-        <HomePage />
-  
+    <ProductProvider>
+      <HomePage />
+    </ProductProvider>
   );
 };
 

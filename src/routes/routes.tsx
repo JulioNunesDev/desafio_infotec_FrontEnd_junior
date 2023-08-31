@@ -5,26 +5,25 @@ import Product from "../pages/Product/Index";
 
 import S from "./styled";
 import Footer from "../components/Footer";
-import PageCart from "../pages/cart";
-
+import Cart from "../pages/cart";
+import Carts from "../pages/Carts/Index";
 
 function AppRoutes() {
   return (
-      <BrowserRouter>
-        <Header />
-        <S.MainBox>
-          <Routes>
-      
-            <Route path="/" element={<Home />} />
+    <BrowserRouter>
+      <Header />
+      <S.MainBox>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-            <Route path="/product/:id" element={<Product />} />
-            <Route path="/cart" element={<PageCart />} />
-            <Route path="*" element={<p>Erro</p>} />
-            
-          </Routes>
-        </S.MainBox>
-        <Footer />
-      </BrowserRouter>
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="/carts" element={<Carts />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<p>Erro</p>} />
+        </Routes>
+      </S.MainBox>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
