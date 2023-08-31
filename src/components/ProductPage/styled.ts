@@ -3,15 +3,29 @@ const styleds = {
 BoxMain: styled.div`
 background-color: #f4f4f4;
 width:100%;
-height: auto;
+height: 100%;
 box-shadow: var(--sombra);
 display: flex;
 justify-content: space-around;
 padding-top: 20px;
 
+.observation-options{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    div{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 .infors{
-    height: 300px;
-width: 600px;
+    height: max-content;
+    width: 600px;
 background-color: #fff;
 border-radius: 8px;
 padding: 15px;
