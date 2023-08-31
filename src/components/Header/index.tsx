@@ -7,10 +7,10 @@ const Header = () => {
     <S.BoxMain>
       <div className="logo">
       <Link to="/">
-        <h2>InfoTec</h2>
+        <h2>Deafio InfoTec</h2>
       </Link>
-        
       </div>
+
       <nav>
         <ul>
           <li>
@@ -20,7 +20,6 @@ const Header = () => {
             <Link to="carts">Carts</Link>
           </li>
         </ul>
-      </nav>
       <div className="cart">
         <div className="countCart"></div>
         <IconContext.Provider value={{ color: "black", size: "23", className:'teste'}}>
@@ -31,6 +30,7 @@ const Header = () => {
           </Link>
         </IconContext.Provider>
       </div>
+      </nav>
     </S.BoxMain>
   );
 };
