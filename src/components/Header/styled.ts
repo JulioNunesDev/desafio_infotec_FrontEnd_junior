@@ -26,15 +26,16 @@ const styleds = {
         font-size: 30px;
         color: #000000;
         font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: var(--font-Poppins);
       }
     }
     nav {
       max-width: 1200px;
       display: flex;
       align-items: center;
-      height: 75px;
+      height: 70px;
       width: auto;
+      gap: 50px;
 
       ul {
         display: flex;
@@ -47,18 +48,18 @@ const styleds = {
         a {
           color: #000000;
           text-decoration: none;
-          font-size: 23px;
-          font-family: Arial, Helvetica, sans-serif;
+          font-size: 22px;
+          font-family: var(--font-Poppins);
           transition: all.2s ease-in;
+          font-weight: bold;
 
           &:hover {
-            color: #ff7f50;
+            color: var(--color-primary);
           }
         }
       }
-    }
 
-    .cart {
+      .cart {
       position: relative;
 
       button {
@@ -85,6 +86,9 @@ const styleds = {
         }
       }
     }
+    }
+
+    
   `,
 };
 
