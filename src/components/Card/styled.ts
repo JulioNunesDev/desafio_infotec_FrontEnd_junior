@@ -10,17 +10,17 @@ const styleds = {
     cursor: pointer;
     padding: 30px;
     box-shadow: var(--sombra);
-   
+
     a {
       text-decoration: none;
     }
 
     .tittle {
       width: 100%;
-      height:max-content;
+      height: max-content;
       display: flex;
       align-items: center;
-      
+
       justify-content: space-between;
       padding: 10px 15px;
       gap: 10px;
@@ -57,14 +57,12 @@ const styleds = {
     width: 100%;
     height: max-content;
 
-   
-
     .image {
       width: 100%;
       height: auto;
 
       img {
-        border-radius: 20px ;
+        border-radius: 20px;
         width: 300px;
         height: 250px;
         object-fit: cover;

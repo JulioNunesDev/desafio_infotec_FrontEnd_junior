@@ -10,20 +10,15 @@ const styleds = {
     padding-top: 50px;
     flex-wrap: wrap;
 
-
-    @media screen and (max-width: 1366px){
-       width: 100%;
-       height: auto;
-       padding-top: 50px;
-       flex-direction: column;
-
-    
-
-     
-      }
+    @media screen and (max-width: 1366px) {
+      width: 100%;
+      height: auto;
+      padding-top: 50px;
+      flex-direction: column;
+    }
 
     .BoxContent {
-      width: auto;
+      width: max-content;
       height: 700px;
       background-color: #f6f6f6;
       border: 1px solid rgba(0, 0, 0, 0.3);
@@ -33,12 +28,12 @@ const styleds = {
       gap: 10px;
       padding: 20px;
 
-      @media screen and (max-width: 1366px){
-      display: flex;
- 
-      flex-wrap: wrap;
- 
-      height: auto;
+      @media screen and (max-width: 1366px) {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        height: auto;
       }
 
       .products {
@@ -53,33 +48,29 @@ const styleds = {
         border-radius: 5px;
         flex-wrap: wrap;
 
-        @media screen and (max-width: 1366px){
-   
-        padding: 0px;
-        gap: 0px;
-        flex-wrap: wrap;
-        display: flex;
-        height: auto;
-        flex-direction: row;
-        width: auto;
-
-        .image{
-       
-        width: auto;
-        height: auto;
-        }
-
-
-        .products-price{
-          display: flex;
-          flex-direction: column;
-     
-          width: auto;
-          height: 100%;
+        @media screen and (max-width: 1366px) {
+          padding: 0px;
+          gap: 0px;
           flex-wrap: wrap;
-         display: flex;
-        }
+          display: flex;
+          height: auto;
+          flex-direction: row;
+          width: auto;
 
+          .image {
+            width: auto;
+            height: auto;
+          }
+
+          .products-price {
+            display: flex;
+            flex-direction: column;
+
+            width: auto;
+            height: 100%;
+            flex-wrap: wrap;
+            display: flex;
+          }
         }
 
         p {
@@ -115,22 +106,21 @@ const styleds = {
           height: 100%;
           display: flex;
           gap: 30px;
-  
+
           h2 {
             font-family: var(--font-Roboto);
           }
         }
 
-        .btn{
-         
+        .btn {
           display: flex;
           gap: 10px;
           display: flex;
           justify-content: center;
-        button {
+          button {
             border: none;
             border-radius: 50%;
-            padding:5px;
+            padding: 5px;
             cursor: pointer;
             transition: 0.2s ease-in;
             &:hover {
@@ -142,10 +132,10 @@ const styleds = {
           display: flex;
           gap: 20px;
           align-items: center;
-  
+
           p {
           }
-  
+
           button {
             border: none;
             background-color: transparent;
@@ -158,12 +148,9 @@ const styleds = {
           }
         }
       }
-
-
     }
 
     .boxcheckout {
- 
       width: 500px;
       height: max-content;
       background-color: #f6f6f6;

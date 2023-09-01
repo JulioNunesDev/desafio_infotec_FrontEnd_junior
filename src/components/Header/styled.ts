@@ -1,11 +1,9 @@
 import { styled } from "styled-components";
 const styleds = {
   BoxMain: styled.header`
-
-  a{
-  text-decoration: none;
-}
-
+    a {
+      text-decoration: none;
+    }
 
     width: 100%;
     height: 75px;
@@ -21,7 +19,6 @@ const styleds = {
     .logo {
       position: relative;
 
-      
       h2 {
         font-size: 30px;
         color: #000000;
@@ -60,35 +57,33 @@ const styleds = {
       }
 
       .cart {
-      position: relative;
+        position: relative;
 
-      button {
-        border: none;
-        background-color: #fff;
-        cursor: pointer;
-      }
+        button {
+          border: none;
+          background-color: #fff;
+          cursor: pointer;
+        }
 
-      .countCart {
-        background-color: red;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: 23px;
-        right: 23px;
+        .countCart {
+          background-color: red;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          bottom: 23px;
+          right: 23px;
 
-        p {
-          font-family: var(--font-Jost);
-          color: #fff;
+          p {
+            font-family: var(--font-Jost);
+            color: #fff;
+          }
         }
       }
     }
-    }
-
-    
   `,
 };
 
