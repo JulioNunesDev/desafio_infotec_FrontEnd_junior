@@ -37,14 +37,15 @@ Para executar este projeto em seu ambiente de desenvolvimento, siga estas etapas
 
 ![Como Iniciar o Projeto](https://i.imgur.com/caPoPTU.gif)
 
-
-1. **Demonstração da Aplicação**:
-
-![Demonstração da Aplicação]([url-do-seu-gif.gif](https://i.imgur.com/kQijK5o.gif))
-
 ```bash
 npm run dev
 ```
+
+1. **Demonstração da Aplicação**:
+
+![Demonstração da Aplicação](https://i.imgur.com/kQijK5o.gif)
+
+
 
 Isso iniciará o servidor de desenvolvimento e abrirá a aplicação no navegador padrão.
 
