@@ -30,7 +30,7 @@ const jsonData = [
   },
   {
     id: "3",
-    name: "Ovos",
+    name: "Ovos Dúzia",
     image:
       "https://th.bing.com/th/id/R.6d1073f112b8937ea639bb3c25182d74?rik=%2f2JGaFIjijqZpQ&pid=ImgRaw&r=0",
     price: 9.50,

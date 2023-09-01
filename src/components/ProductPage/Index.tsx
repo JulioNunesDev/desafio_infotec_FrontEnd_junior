@@ -43,7 +43,7 @@ const ProductPage = () => {
           <p>{product.resume}</p>
         </div>
 
-        {product.name === "Ovos" && (
+        {product.name === "Ovos Dúzia" && (
           <div className="checkbox-wrapper-65">
             <label className="cbk1-65">
               <input

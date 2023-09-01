@@ -1,4 +1,4 @@
-import { notify } from "../../components/ModalAlert";
+
 import { ProductProvider } from "../../hooks/Products";
 import { CartProvider } from "../../hooks/Store";
 

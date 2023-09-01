@@ -15,7 +15,6 @@ function AppRoutes() {
       <S.MainBox>
         <Routes>
           <Route path="/" element={<Home />} />
-
           <Route path="/product/:id" element={<Product />} />
           <Route path="/carts" element={<Carts />} />
           <Route path="/cart" element={<Cart />} />
