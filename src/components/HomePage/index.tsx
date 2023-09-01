@@ -11,11 +11,9 @@ const HomePage = () => {
   return (
     <S.MainBox>
       <div className="BoxProducts">
-
         <h2>Produtos</h2>
 
         <div className="productsMap">
-
           {productList.map((item, index) => {
             let ignored = false;
 
@@ -27,10 +25,7 @@ const HomePage = () => {
 
             return <Card key={index} data={item} />;
           })}
-          
         </div>
-
-
       </div>
     </S.MainBox>
   );

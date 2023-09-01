@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import useProductContext from "../../hooks/Products";
+import useProductContext, { ProductProvider } from "../../hooks/Products";
 import { FaPlus, FaTrash } from "react-icons/fa6";
 import { IoIosRemove } from "react-icons/io";
 import S from "./styled";
-import useCartContext from "../../hooks/Store";
+import useCartContext, { CartProvider } from "../../hooks/Store";
 import { Link } from "react-router-dom";
 
 const CartItem = ({ item, product, addToCart, Decrement, removeFromCart }) => {
@@ -12,7 +12,7 @@ const CartItem = ({ item, product, addToCart, Decrement, removeFromCart }) => {
       <div className="image">
         <img src={product.image} alt={`Produto: ${product.name}`} />
       </div>
-    
+
       <div className="products-price">
         <h2>{product.name}</h2>
         <p>
@@ -49,8 +49,13 @@ const CartItem = ({ item, product, addToCart, Decrement, removeFromCart }) => {
 };
 
 const CartPage = () => {
-  const { produtoCarrinho, removeFromCart, Decrement, addToCart } =
-    useCartContext();
+  const {
+    produtoCarrinho,
+    removeFromCart,
+    Decrement,
+    addToCart,
+    createNewCart,
+  } = useCartContext();
   const { productList } = useProductContext();
   const [valueTotal, setValueTotal] = useState<number>(0);
 
@@ -67,54 +72,66 @@ const CartPage = () => {
   }, [produtoCarrinho, productList]);
 
   return (
-    <S.BoxMain>
-      <div className="BoxContent">
-        {produtoCarrinho.map((item) => {
-          const product = productList.find((prev) => prev.id === item.id);
-          return (
-            <CartItem
-              key={item.id}
-              item={item}
-              product={product}
-              addToCart={addToCart}
-              Decrement={Decrement}
-              removeFromCart={removeFromCart}
-            />
-          );
-        })}
-      </div>
-      <div className="boxcheckout">
-        <div className="tittle-products">
-          <h3>Carrinho de Compras</h3>
-          <div className="supplier">
-            <p>
-              Vendido por <strong>Pedro</strong>
-            </p>
-            <p>
-              entrege por <strong>Pedro Express</strong>
-            </p>
-            <p>
-              Garantia de entrega e qualidade em nosso produto.{" "}
-              <Link to="/">Saiba mais</Link>
-            </p>
+    <CartProvider>
+      <ProductProvider>
+        <S.BoxMain>
+          <div className="BoxContent">
+            {produtoCarrinho.map((item) => {
+              const product = productList.find((prev) => prev.id === item.id);
+              return (
+                <CartItem
+                  key={item.id}
+                  item={item}
+                  product={product}
+                  addToCart={addToCart}
+                  Decrement={Decrement}
+                  removeFromCart={removeFromCart}
+                />
+              );
+            })}
           </div>
-        </div>
+          <div className="boxcheckout">
+            <div className="tittle-products">
+              <h3>Carrinho de Compras</h3>
+              <div className="supplier">
+                <p>
+                  Vendido por <strong>Pedro</strong>
+                </p>
+                <p>
+                  entrege por <strong>Pedro Express</strong>
+                </p>
+                <p>
+                  Garantia de entrega e qualidade em nosso produto.{" "}
+                  <Link to="/">Saiba mais</Link>
+                </p>
+              </div>
+            </div>
 
-        <div className="priceTotal">
-          <p>
-            R${" "}
-            <span className="custom-color-btn-price">
-              {valueTotal.toFixed(2)}
-            </span>
-          </p>
-        </div>
+            <div className="priceTotal">
+              <p>
+                R${" "}
+                <span className="custom-color-btn-price">
+                  {valueTotal.toFixed(2)}
+                </span>
+              </p>
+            </div>
 
-        <div className="btns">
-          <button>Finalizar compra</button>
-          <Link to="/">Continue Comprando</Link>
-        </div>
-      </div>
-    </S.BoxMain>
+            <div className="btns">
+              <Link
+                to="/carts"
+                onClick={() => {
+                  const id = createNewCart();
+                  alert(`Seu numero de pedido: ${id}, copie!`);
+                }}
+              >
+                Finalizar compra
+              </Link>
+              <Link to="/">Continue Comprando</Link>
+            </div>
+          </div>
+        </S.BoxMain>
+      </ProductProvider>
+    </CartProvider>
   );
 };
 
