@@ -35,7 +35,7 @@ Para executar este projeto em seu ambiente de desenvolvimento, siga estas etapas
 
 3. **Como Iniciar o Projeto**:
 
-![Como Iniciar o Projeto](https://i.imgur.com/caPoPTU.gifv)
+![Como Iniciar o Projeto](https://i.imgur.com/caPoPTU.gif)
 
 ```bash
   npm run dev
