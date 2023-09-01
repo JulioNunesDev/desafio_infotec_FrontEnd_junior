@@ -33,13 +33,23 @@ Para executar este projeto em seu ambiente de desenvolvimento, siga estas etapas
    npm install
    ```
 
-3. **Inicie a Aplicação**: Após a conclusão da instalação das dependências, você pode iniciar a aplicação com o seguinte comando:
+3. **Como Iniciar o Projeto**:
 
-   ```bash
-   npm run dev
-   ```
+![Como Iniciar o Projeto](https://i.imgur.com/caPoPTU.gifv)
 
-   Isso iniciará o servidor de desenvolvimento e abrirá a aplicação no navegador padrão.
+```bash
+  npm run dev
+```
+
+1. **Demonstração da Aplicação**:
+
+![Demonstração da Aplicação](url-do-seu-gif.gif)
+
+```bash
+npm run dev
+```
+
+Isso iniciará o servidor de desenvolvimento e abrirá a aplicação no navegador padrão.
 
 ## Contato
 
@@ -54,5 +64,10 @@ Este projeto representa meu esforço e dedicação para atender ao desafio propo
 Atenciosamente,
 Júlio Nunes
 
+1. **Demonstração da Aplicação**: Mostre um GIF que apresenta a funcionalidade principal da sua aplicação em ação. Isso dará aos leitores uma ideia rápida do que esperar.
 
+![Demonstração da Aplicação](url-do-seu-gif.gif)
 
+2. **Como Iniciar o Projeto**: Se você tiver algum passo específico para iniciar o projeto (por exemplo, comandos para rodar a aplicação), você pode mostrar um GIF desse processo.
+
+![Como Iniciar o Projeto](url-do-seu-gif.gif)
