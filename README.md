@@ -37,13 +37,10 @@ Para executar este projeto em seu ambiente de desenvolvimento, siga estas etapas
 
 ![Como Iniciar o Projeto](https://i.imgur.com/caPoPTU.gif)
 
-```bash
-  npm run dev
-```
 
 1. **Demonstração da Aplicação**:
 
-![Demonstração da Aplicação](url-do-seu-gif.gif)
+![Demonstração da Aplicação]([url-do-seu-gif.gif](https://i.imgur.com/kQijK5o.gif))
 
 ```bash
 npm run dev
