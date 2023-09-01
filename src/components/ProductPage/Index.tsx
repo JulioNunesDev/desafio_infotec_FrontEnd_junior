@@ -44,14 +44,22 @@ const ProductPage = () => {
         </div>
 
         {product.name === "Ovos" && (
-          <div className="observation-options">
-            <input
-              type="checkbox"
-              name="meia"
-              checked={meia}
-              onClick={() => setMeia(!meia)}
-            />
-            <label htmlFor="meia">Meia duzia</label>
+          <div className="checkbox-wrapper-65">
+            <label className="cbk1-65">
+              <input
+                id="cbk1-65"
+                type="checkbox"
+                name="meia"
+                checked={meia}
+                onClick={() => setMeia(!meia)}
+              />
+              <span className="cbx">
+                <svg viewBox="0 0 12 11" height="11px" width="12px">
+                  <polyline points="1 6.29411765 4.5 10 11 1"></polyline>
+                </svg>
+              </span>
+              <span>Meia Dúzia</span>
+            </label>
           </div>
         )}
 

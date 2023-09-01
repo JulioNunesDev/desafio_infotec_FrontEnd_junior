@@ -40,7 +40,7 @@ const jsonData = [
     id: "4",
     name: "Ovos Meia-duzia",
     image:
-      "https://th.bing.com/th/id/OIP.ofgJfpkRWjBW8o17jjc4aQAAAA?pid=ImgDet&rs=1",
+      "https://media.istockphoto.com/photos/six-eggs-picture-id518903458?k=6&m=518903458&s=612x612&w=0&h=CT9EFloy4sGhuzuXFeOes226vs4jK6cTy3xsBLMjmiE=",
     price: 4.75,
     resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
   },
