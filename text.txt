@@ -1,5 +1,0 @@
-1 - Create Context
-- [ Create useState Cart ] toggle
-- [ Create LocalStorage]
-2 - Styled Card
-3 - Styled Footer

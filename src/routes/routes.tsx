@@ -11,8 +11,8 @@ import Carts from "../pages/Carts/Index";
 function AppRoutes() {
   return (
     <BrowserRouter>
-      <Header />
       <S.MainBox>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<Product />} />
